@@ -2,9 +2,9 @@
 
 **Firefox configuration hardening for the average Joe**
 
-This is a better-relaxed fork of pyllyukko's awesome [user.js](https://github.com/pyllyukko/user.js) Firefox configuration hardening repo for the average Joe. It hardens security, and gets rid of alot of bloat (Firefox pocket, etc), while retaining a usable browsing experience that the majority of users will expect. Most probably your parents will need this, but will not thank you in return as they were already blissfully ignorant to begin with.
+This is a better-relaxed fork of pyllyukko's awesome [user.js](https://github.com/pyllyukko/user.js) Firefox configuration hardening repo for the average Joe. It hardens security, and gets rid of alot of bloat (Firefox pocket, etc), while retaining a usable browsing experience that the majority of users will expect. Most probably your parents will need this, but will not thank you in return.
 
-The original pyllyukko [user.js](https://github.com/pyllyukko/user.js) repo maximizes all security measures within Firefox. It was designed for power users, and people who watched [Mr. Robot](https://en.wikipedia.org/wiki/Mr._Robot). However it is unusable on a daily basis by users who actually need security, to the extent of getting annoyed by all the features that got removed (browsing history, etc). Just imagine the look on your dad's face when he discovers his browsing history is gone. Also, the official [relaxed branch](https://github.com/pyllyukko/user.js/tree/relaxed) is not maintained, and is still quite unusable (in my opinion).
+The original pyllyukko [user.js](https://github.com/pyllyukko/user.js) repo maximizes all security measures within Firefox. It was designed for power users, and people who watched [Mr. Robot](https://en.wikipedia.org/wiki/Mr._Robot). However it is unusable on a daily basis by users who actually need security, as many features will be removed (browsing history, etc). Also, the official [relaxed branch](https://github.com/pyllyukko/user.js/tree/relaxed) is not maintained, and is still quite unusable in my opinion.
 
 Here is a list of changes from the original [user.js](https://github.com/pyllyukko/user.js) repo:
 - Integrates the changes from the original [relaxed branch](https://github.com/pyllyukko/user.js/tree/relaxed).
