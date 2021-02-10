@@ -112,7 +112,7 @@ function import_cas() {
     echo "  ${REQUIRED_CA}"
     # certutil requires a "nickname", so we'll use the CN or OU
     # TODO: change this?
-    NICKNAME=$( openssl x509 -in "${REQUIRED_CA}" -noout -subject | sed 's/^.*\(CN\|OU\)=//' )
+    NICKNAME=$( openssl x509 -in "${REQUIRED_CA}" -noout -subject | sed 's/^.*\(CN\|OU\)\s\?=\s\?//' )
     certutil -A -n "${NICKNAME}" -t CT,c,c -a -d "${FF_HOME}" 0<"${REQUIRED_CA}"
 
     # TEST!!! allow code signing
@@ -243,7 +243,7 @@ function print_countries() {
   for NICKNAME in "${NICKNAMES[@]}"
   do
     # print the PEM from the cert8.db and get the FP with openssl
-    COUNTRY=$( certutil -L -n "${NICKNAME}" -a -d "${FF_HOME}" | openssl x509 -noout -subject | grep -o "C=[A-Z]\+" )
+    COUNTRY=$( certutil -L -n "${NICKNAME}" -a -d "${FF_HOME}" | openssl x509 -noout -subject | grep -o "C\s\?=\s\?[A-Z]\+" )
     if [ -n "${COUNTRY}" ]
     then
       echo "${COUNTRY#C=}"

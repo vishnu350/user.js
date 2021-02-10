@@ -172,7 +172,7 @@ HTML5 / [APIs](https://wiki.mozilla.org/WebAPI) / [DOM](https://en.wikipedia.org
 * When geolocation is enabled, don't log geolocation requests to the console
 * Disable raw TCP socket support (mozTCPSocket) [ [1](https://trac.torproject.org/projects/tor/ticket/18863) [2](https://www.mozilla.org/en-US/security/advisories/mfsa2015-97/) [3](https://developer.mozilla.org/docs/Mozilla/B2G_OS/API/TCPSocket) ]
 * Disable leaking network/browser connection information via Javascript
-* Disable network API [ [1](https://developer.mozilla.org/en-US/docs/Web/API/Connection/onchange) [2](https://www.torproject.org/projects/torbrowser/design/#fingerprinting-defenses) ]
+* Disable network API (Firefox < 32) [ [1](https://developer.mozilla.org/en-US/docs/Web/API/Connection/onchange) [2](https://www.torproject.org/projects/torbrowser/design/#fingerprinting-defenses) ]
 * Disable WebRTC entirely to prevent leaking internal IP addresses (Firefox < 42)
 * Don't reveal your internal IP when WebRTC is enabled (Firefox >= 42) [ [1](https://wiki.mozilla.org/Media/WebRTC/Privacy) [2](https://github.com/beefproject/beef/wiki/Module%3A-Get-Internal-IP-WebRTC) ]
 * Disable WebRTC getUserMedia, screen sharing, audio capture, video capture [ [1](https://wiki.mozilla.org/Media/getUserMedia) [2](https://blog.mozilla.org/futurereleases/2013/01/12/capture-local-camera-and-microphone-streams-with-getusermedia-now-enabled-in-firefox/) [3](https://developer.mozilla.org/en-US/docs/Web/API/Navigator) ]
@@ -205,7 +205,6 @@ Settings that do not belong to other sections or are user specific preferences.
 * Disable face detection
 * Disable GeoIP lookup on your address to set default search engine region [ [1](https://trac.torproject.org/projects/tor/ticket/16254) [2](https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_geolocation-for-default-search-engine) ]
 * Set Accept-Language HTTP header to en-US regardless of Firefox localization [ [1](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language) ]
-* Set Firefox locale to en-US [ [1](http://kb.mozillazine.org/General.useragent.locale) ]
 * Don't use OS values to determine locale, force using Firefox locale setting [ [1](http://kb.mozillazine.org/Intl.locale.matchOS) ]
 * Don't use Mozilla-provided location-specific search engines
 * Do not automatically send selection to clipboard on some Linux platforms [ [1](http://kb.mozillazine.org/Clipboard.autocopy) ]
@@ -225,7 +224,7 @@ Settings that do not belong to other sections or are user specific preferences.
 * Disable SVG in OpenType fonts [ [1](https://wiki.mozilla.org/SVGOpenTypeFonts) [2](https://github.com/iSECPartners/publications/tree/master/reports/Tor%20Browser%20Bundle) ]
 * Disable video stats to reduce fingerprinting threat [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=654550) [2](https://github.com/pyllyukko/user.js/issues/9#issuecomment-100468785) [3](https://github.com/pyllyukko/user.js/issues/9#issuecomment-148922065) ]
 * Don't reveal build ID
-* Prevent font fingerprinting [ [1](https://browserleaks.com/fonts) [2](https://github.com/pyllyukko/user.js/issues/120) ]
+* Don't use document specified fonts to prevent installed font enumeration (fingerprinting) [ [1](https://github.com/pyllyukko/user.js/issues/395) [2](https://browserleaks.com/fonts) [3](https://github.com/pyllyukko/user.js/issues/120) ]
 * Enable only whitelisted URL protocol handlers [ [1](http://kb.mozillazine.org/Network.protocol-handler.external-default) [2](http://kb.mozillazine.org/Network.protocol-handler.warn-external-default) [3](http://kb.mozillazine.org/Network.protocol-handler.expose.%28protocol%29) [4](https://news.ycombinator.com/item?id=13047883) [5](https://bugzilla.mozilla.org/show_bug.cgi?id=167475) [6](https://github.com/pyllyukko/user.js/pull/285#issuecomment-298124005) ]
 
 ### Extensions / plugins
@@ -240,7 +239,6 @@ Harden preferences related to external plugins
 * Disable sending Flash Player crash reports
 * When Flash crash reports are enabled, don't send the visited URL in the crash report
 * When Flash is enabled, download and use Mozilla SWF URIs blocklist [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=1237198) [2](https://github.com/mozilla-services/shavar-plugin-blocklist) ]
-* Disable Shumway (Mozilla Flash renderer) [ [1](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Shumway) ]
 * Disable Gnome Shell Integration NPAPI plugin
 * Enable plugins click-to-play [ [1](https://wiki.mozilla.org/Firefox/Click_To_Play) [2](https://blog.mozilla.org/security/2012/10/11/click-to-play-plugins-blocklist-style/) ]
 * Updates addons automatically [ [1](https://blog.mozilla.org/addons/how-to-turn-off-add-on-updates/) ]
@@ -263,16 +261,17 @@ Disable Firefox integrated metrics/reporting/experiments, disable potentially in
 * Enable Firefox Tracking Protection [ [1](https://wiki.mozilla.org/Security/Tracking_protection) [2](https://support.mozilla.org/en-US/kb/tracking-protection-firefox) [3](https://support.mozilla.org/en-US/kb/tracking-protection-pbm) [4](https://kontaxis.github.io/trackingprotectionfirefox/) [5](https://feeding.cloud.geek.nz/posts/how-tracking-protection-works-in-firefox/) ]
 * Enable contextual identity Containers feature (Firefox >= 52)
 * Enable Firefox's anti-fingerprinting mode ("resist fingerprinting" or RFP) (Tor Uplift project) [ [1](https://wiki.mozilla.org/Security/Tor_Uplift/Tracking) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=1333933) [3](https://wiki.mozilla.org/Security/Fingerprinting) ]
+* disable mozAddonManager Web API [FF57+] [ [1](https://bugzilla.mozilla.org/buglist.cgi?bug_id=1384330) [2](https://bugzilla.mozilla.org/buglist.cgi?bug_id=1406795) [3](https://bugzilla.mozilla.org/buglist.cgi?bug_id=1415644) [4](https://bugzilla.mozilla.org/buglist.cgi?bug_id=1453988) [5](https://trac.torproject.org/projects/tor/ticket/26114) ]
+* disable showing about:blank/maximized window as soon as possible during startup [FF60+] [ [1](https://bugzilla.mozilla.org/1448423) ]
 * Disable the built-in PDF viewer [ [1](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2015-2743) [2](https://blog.mozilla.org/security/2015/08/06/firefox-exploit-found-in-the-wild/) [3](https://www.mozilla.org/en-US/security/advisories/mfsa2015-69/) ]
 * Disable collection/sending of the health report (healthreport.sqlite*) [ [1](https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf) [2](https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html) ]
-* Disable Heartbeat  (Mozilla user rating telemetry) [ [1](https://wiki.mozilla.org/Advocacy/heartbeat) [2](https://trac.torproject.org/projects/tor/ticket/19047) ]
+* Disable Shield/Heartbeat/Normandy (Mozilla user rating telemetry) [ [1](https://wiki.mozilla.org/Advocacy/heartbeat) [2](https://trac.torproject.org/projects/tor/ticket/19047) [3](https://trac.torproject.org/projects/tor/ticket/18738) [4](https://wiki.mozilla.org/Firefox/Shield) [5](https://github.com/mozilla/normandy) [6](https://support.mozilla.org/en-US/kb/shield) [7](https://bugzilla.mozilla.org/show_bug.cgi?id=1370801) ]
 * Disable Firefox Hello metrics collection [ [1](https://groups.google.com/d/topic/mozilla.dev.platform/nyVkCx-_sFw/discussion) ]
 * Enforce checking for Firefox updates [ [1](http://kb.mozillazine.org/App.update.enabled) ]
 * Enable blocking reported web forgeries [ [1](https://wiki.mozilla.org/Security/Safe_Browsing) [2](http://kb.mozillazine.org/Safe_browsing) [3](https://support.mozilla.org/en-US/kb/how-does-phishing-and-malware-protection-work) [4](http://forums.mozillazine.org/viewtopic.php?f=39&t=2711237&p=12896849#p12896849) ]
 * Enable blocking reported attack sites [ [1](http://kb.mozillazine.org/Browser.safebrowsing.malware.enabled) ]
 * Disable querying Google Application Reputation database for downloaded binary files [ [1](https://www.mozilla.org/en-US/firefox/39.0/releasenotes/) [2](https://wiki.mozilla.org/Security/Application_Reputation) ]
 * Disable Pocket [ [1](https://support.mozilla.org/en-US/kb/save-web-pages-later-pocket-firefox) [2](https://github.com/pyllyukko/user.js/issues/143) ]
-* Disable SHIELD [ [1](https://support.mozilla.org/en-US/kb/shield) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=1370801) ]
 * Disable "Recommended by Pocket" in Firefox Quantum
 
 ### Automatic connections
@@ -299,7 +298,7 @@ HTTP protocol related entries. This affects cookies, the user agent, referer and
 * Enable CSP 1.1 script-nonce directive support [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=855326) ]
 * Enable Content Security Policy (CSP) [ [1](https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Introducing_Content_Security_Policy) [2](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) ]
 * Enable Subresource Integrity [ [1](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) [2](https://wiki.mozilla.org/Security/Subresource_Integrity) ]
-* Send a referer header with the target URI as the source [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=822869) [2](https://github.com/pyllyukko/user.js/issues/227) ]
+* Don't send referer headers when following links across different domains [ [1](https://github.com/pyllyukko/user.js/issues/227) [2](https://github.com/pyllyukko/user.js/issues/328) [3](https://feeding.cloud.geek.nz/posts/tweaking-referrer-for-privacy-in-firefox/) ]
 * Accept Only 1st Party Cookies [ [1](http://kb.mozillazine.org/Network.cookie.cookieBehavior#1) ]
 * Enable first-party isolation [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=1299996) [2](https://bugzilla.mozilla.org/show_bug.cgi?id=1260931) [3](https://wiki.mozilla.org/Security/FirstPartyIsolation) ]
 * Make sure that third-party cookies (if enabled) never persist beyond the session. [ [1](https://feeding.cloud.geek.nz/posts/tweaking-cookies-for-privacy-in-firefox/) [2](http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly) [3](https://developer.mozilla.org/en-US/docs/Cookies_Preferences_in_Mozilla#network.cookie.thirdparty.sessionOnly) ]
@@ -316,7 +315,7 @@ Enable and configure private browsing mode, don't store information locally duri
 * Disable disk cache [ [1](http://kb.mozillazine.org/Browser.cache.disk.enable) ]
 * Disable Caching of SSL Pages
 * Disable download history
-* Disable password manager
+* Disable password manager (use an external password manager!)
 * Disable form autofill, don't save information entered in web page forms and the Search Bar
 * Cookies expires at the end of the session (when the browser closes) [ [1](http://kb.mozillazine.org/Network.cookie.lifetimePolicy#2) ]
 * Require manual intervention to autofill known username/passwords sign-in forms [ [1](http://kb.mozillazine.org/Signon.autofillForms) [2](https://www.torproject.org/projects/torbrowser/design/#identifier-linkability) ]
@@ -362,11 +361,12 @@ Improve visibility of security-related elements, mitigate shoulder-surfing
 * Disable TLS Session Tickets [ [1](https://www.blackhat.com/us-13/briefings.html#NextGen) [2](https://media.blackhat.com/us-13/US-13-Daigniere-TLS-Secrets-Slides.pdf) [3](https://media.blackhat.com/us-13/US-13-Daigniere-TLS-Secrets-WP.pdf) [4](https://bugzilla.mozilla.org/show_bug.cgi?id=917049) [5](https://bugzilla.mozilla.org/show_bug.cgi?id=967977) ]
 * Only allow TLS 1.[0-3] [ [1](http://kb.mozillazine.org/Security.tls.version.*) ]
 * Disable insecure TLS version fallback [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=1084025) [2](https://github.com/pyllyukko/user.js/pull/206#issuecomment-280229645) ]
-* Enfore Public Key Pinning [ [1](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning) [2](https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning) ]
+* Enforce Public Key Pinning [ [1](https://en.wikipedia.org/wiki/HTTP_Public_Key_Pinning) [2](https://wiki.mozilla.org/SecurityEngineering/Public_Key_Pinning) ]
 * Disallow SHA-1 [ [1](https://bugzilla.mozilla.org/show_bug.cgi?id=1302140) [2](https://shattered.io/) ]
 * Warn the user when server doesn't support RFC 5746 ("safe" renegotiation) [ [1](https://wiki.mozilla.org/Security:Renegotiation#security.ssl.treat_unsafe_negotiation_as_broken) [2](https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2009-3555) ]
 * Disable automatic reporting of TLS connection errors [ [1](https://support.mozilla.org/en-US/kb/certificate-pinning-reports) ]
 * Pre-populate the current URL but do not pre-fetch the certificate in the "Add Security Exception" dialog [ [1](http://kb.mozillazine.org/Browser.ssl_override_behavior) [2](https://github.com/pyllyukko/user.js/issues/210) ]
+* Encrypted SNI (when TRR is enabled) [ [1](https://www.cloudflare.com/ssl/encrypted-sni/) [2](https://wiki.mozilla.org/Trusted_Recursive_Resolver#ESNI) [3](https://en.wikipedia.org/wiki/Server_Name_Indication#Security_implications_(ESNI)) ]
 
 ### Cipher suites
 
@@ -378,12 +378,10 @@ This section tweaks the cipher suites used by Firefox. The idea is to support on
 * Disable 3DES (effective key size is < 128) [ [1](https://en.wikipedia.org/wiki/3des#Security) [2](http://en.citizendium.org/wiki/Meet-in-the-middle_attack) [3](http://www-archive.mozilla.org/projects/security/pki/nss/ssl/fips-ssl-ciphersuites.html) ]
 * Disable ciphers with ECDH (non-ephemeral)
 * Disable 256 bits ciphers without PFS
-* Enable ciphers with ECDHE and key size > 128bits
 * Enable GCM ciphers (TLSv1.2 only) [ [1](https://en.wikipedia.org/wiki/Galois/Counter_Mode) ]
 * Enable ChaCha20 and Poly1305 (Firefox >= 47) [ [1](https://www.mozilla.org/en-US/firefox/47.0/releasenotes/) [2](https://tools.ietf.org/html/rfc7905) [3](https://bugzilla.mozilla.org/show_bug.cgi?id=917571) [4](https://bugzilla.mozilla.org/show_bug.cgi?id=1247860) [5](https://cr.yp.to/chacha.html) ]
 * Disable ciphers susceptible to the logjam attack [ [1](https://weakdh.org/) ]
 * Disable ciphers with DSA (max 1024 bits)
-* Fallbacks due compatibility reasons
 <!-- END SECTION -->
 
 -------------------------------------------------------------------------
@@ -437,9 +435,11 @@ Hardening your often implies a trade-off with ease-of-use and comes with reduced
 
 <!-- BEGIN PROBLEMS-LIMITATIONS -->
 * Disabling ServiceWorkers breaks functionality on some sites (Google Street View...)
+* Web Audio API is required for Unity web player/games
 * Disabling WebRTC breaks peer-to-peer file sharing tools (reep.io ...)
 * Disabling clipboard events breaks Ctrl+C/X/V copy/cut/paste functionaility in JS-based web applications (Google Docs...)
 * Disabling clipboard operations will break legitimate JS-based "copy to clipboard" functionality
+* WebAssembly is required for Unity web player/games
 * Enabling Mixed Display Content blocking can prevent images/styles... from loading properly when connection to the website is only partially secured
 * Disabling nonessential protocols breaks all interaction with custom protocols such as mailto:, irc:, magnet: ... and breaks opening third-party mail/messaging/torrent/... clients when clicking on links with these protocols
 * Disabling system add-on updates prevents Mozilla from "hotfixing" your browser to patch critical problems (one possible use case from the documentation)
@@ -449,9 +449,6 @@ Hardening your often implies a trade-off with ease-of-use and comes with reduced
 * Fully automatic updates are disabled and left to package management systems on Linux. Windows users may want to change this setting.
 * Update check page might incorrectly report Firefox ESR as out-of-date
 * Do No Track must be enabled manually
-* Spoofing referers breaks functionality on websites relying on authentic referer headers
-* Spoofing referers breaks visualisation of 3rd-party sites on the Lightbeam addon
-* Spoofing referers disables CSRF protection on some login pages not implementing origin-header/cookie+token based CSRF protection
 * Blocking 3rd-party cookies breaks a number of payment gateways
 * First-party isolation breaks Microsoft Teams
 * First-party isolation causes HTTP basic auth to ask for credentials for every new tab (see #425)
@@ -464,6 +461,7 @@ Hardening your often implies a trade-off with ease-of-use and comes with reduced
 * Installing user.js **will remove your saved passwords** (https://github.com/pyllyukko/user.js/issues/27)
 * Clearing open windows on Firefox exit causes 2 windows to open when Firefox starts https://bugzilla.mozilla.org/show_bug.cgi?id=1334945
 * .URL shortcut files will be created with a generic icon
+* disabling "beforeunload" events may lead to losing data entered in web forms
 * OCSP leaks your IP and domains you visit to the CA when OCSP Stapling is not available on visited host
 * OCSP is vulnerable to replay attacks when nonce is not configured on the OCSP responder
 * OCSP adds latency (performance)
