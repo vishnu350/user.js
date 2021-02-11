@@ -528,7 +528,7 @@ user_pref("privacy.userContext.enabled",			true);
 // https://wiki.mozilla.org/Security/Fingerprinting
 // NOTICE: RFP breaks some keyboard shortcuts used in certain websites (see #443)
 // NOTICE: RFP changes your time zone
-//user_pref("privacy.resistFingerprinting",			true); // vishnup: This messes up timezone in gmail etc.
+user_pref("privacy.resistFingerprinting",			true);
 
 // PREF: disable mozAddonManager Web API [FF57+]
 // https://bugzilla.mozilla.org/buglist.cgi?bug_id=1384330
