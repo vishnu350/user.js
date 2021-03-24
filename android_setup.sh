@@ -4,8 +4,8 @@
 ## Second arg: User name and group to use (use ls -lrt in the dir to check what it is)
 ## Eg usage: android_setup.sh /data/data/org.moz*/files/mozilla/sbxkj* u0_1213a
 
-#Get SU permissions (required)
-su
+#Get SU permissions (required, do this manually)
+#su
 
 #Go to Firefox dir (TODO: exit if incorrect dir)
 cd $1
