@@ -15,7 +15,7 @@ ls -lrt
 rm user.js
 
 #Fetch latest user.js (vishnu350)
-wget https://github.com/vishnu350/user.js/raw/master/user.js
+curl https://github.com/vishnu350/user.js/raw/master/user.js > user.js
 
 #Set correct permissions
 chown $2:$2 user.js
