@@ -903,7 +903,7 @@ user_pref("browser.bookmarks.max_backups", 0);
 // https://github.com/jonasstrehle/supercookie
 // http://kb.mozillazine.org/Browser.chrome.site_icons
 // https://blog.mozilla.org/security/2021/01/26/supercookie-protections/
-user_pref("browser.chrome.site_icons",				false);
+//user_pref("browser.chrome.site_icons",				false); // vishnup: This makes all pinned tabs look ugly.
 
 /*******************************************************************************
  * SECTION: UI related                                                         *
