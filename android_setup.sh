@@ -2,7 +2,7 @@
 ## Script to setup user.js on android (requires root, run from terminal)
 ## First arg: Full path to directory of Firefox profile in /data
 ## Second arg: User name and group to use (use ls -lrt in the dir to check what it is)
-## Eg usage: android_setup.sh /data/data/org.moz*/files/mozilla/sbxkj* u0_1213a
+## Eg usage: ./android_setup.sh /data/data/org.moz*/files/mozilla/sbxkj* u0_1213a
 
 #Get SU permissions (required, do this manually)
 #su
@@ -15,7 +15,7 @@ ls -lrt
 rm user.js
 
 #Fetch latest user.js (vishnu350)
-curl https://github.com/vishnu350/user.js/raw/master/user.js > user.js
+curl https://raw.githubusercontent.com/vishnu350/user.js/master/user.js > user.js
 
 #Set correct permissions
 chown $2:$2 user.js
