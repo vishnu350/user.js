@@ -1,0 +1,28 @@
+## DNS domains
+127.0.0.1 dns.google
+127.0.0.1 dns64.dns.google
+
+## Time servers
+127.0.0.1 time.google.com
+
+## SUPL (AGPS)
+127.0.0.1 supl.google.com
+127.0.0.1 supl.sonyericsson.com
+127.0.0.1 supl.qxwz.com
+127.0.0.1 supl.vodafone.com
+127.0.0.1 agpss.orange.fr
+127.0.0.1 agps.supl.telstra.com
+127.0.0.1 supl.nokia.com
+127.0.0.1 supl.iusacell.com
+
+## Reroute captive portal (http://captiveportal.kuketz.de)
+185.163.119.132 connectivitycheck.gstatic.com
+
+## NVIDIA telemetry
+0.0.0.0 gfswl.geforce.com
+0.0.0.0 telemetry.nvidia.com
+0.0.0.0 ssl.google-analytics.com
+0.0.0.0 gfe.nvidia.com
+0.0.0.0 telemetry-dce.gfe.nvidia.com
+0.0.0.0 events-dc1.gfe.nvidia.com
+

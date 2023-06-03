@@ -1208,3 +1208,25 @@ user_pref("network.cookie.lifetimePolicy", 2);
 
 /* END: internal custom pref to test for syntax errors ***/
 user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!");
+
+/* vishnup custom changes */
+// Misc changes
+user_pref("browser.startup.page", 3); // Enable session restore
+user_pref("keyword.enabled", true); // This causes the urlbar to not use the search engine
+user_pref("signon.rememberSignons", false); // Dont save passwords
+user_pref("privacy.resistFingerprinting.letterboxing", false); // Ugly
+user_pref("network.trr.mode", 3); // For private DNS over DOH
+// For session history
+//user_pref("privacy.clearOnShutdown.cache", false);
+user_pref("privacy.clearOnShutdown.history", false);
+user_pref("privacy.clearOnShutdown.sessions", false);
+user_pref("privacy.clearOnShutdown.cookies", false);
+user_pref("privacy.clearOnShutdown.offlineApps", false);
+// Disable Pocket
+user_pref("browser.pocket.enabled", false);
+user_pref("extensions.pocket.enabled", false);
+// Disable Google safebrowsing
+user_pref("browser.safebrowsing.malware.enabled", false);
+user_pref("browser.safebrowsing.phishing.enabled", false);
+user_pref("browser.safebrowsing.downloads.enabled", false);
+
