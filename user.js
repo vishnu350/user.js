@@ -1215,7 +1215,6 @@ user_pref("browser.startup.page", 3); // Enable session restore
 user_pref("keyword.enabled", true); // This causes the urlbar to not use the search engine
 user_pref("signon.rememberSignons", false); // Dont save passwords
 user_pref("privacy.resistFingerprinting.letterboxing", false); // Ugly
-user_pref("network.trr.mode", 3); // For private DNS over DOH
 user_pref("media.peerconnection.enabled", false); //WebRTC IP leak
 // For session history
 //user_pref("privacy.clearOnShutdown.cache", false);
@@ -1230,4 +1229,6 @@ user_pref("extensions.pocket.enabled", false);
 user_pref("browser.safebrowsing.malware.enabled", false);
 user_pref("browser.safebrowsing.phishing.enabled", false);
 user_pref("browser.safebrowsing.downloads.enabled", false);
+// Optional settings
+//user_pref("network.trr.mode", 3); // For private DNS over DOH
 
