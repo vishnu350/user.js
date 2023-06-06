@@ -1230,5 +1230,6 @@ user_pref("browser.safebrowsing.malware.enabled", false);
 user_pref("browser.safebrowsing.phishing.enabled", false);
 user_pref("browser.safebrowsing.downloads.enabled", false);
 // Optional settings
+user_pref("security.ssl.require_safe_negotiation", false); // Breaks login to corporate websites
 //user_pref("network.trr.mode", 3); // For private DNS over DOH
 
