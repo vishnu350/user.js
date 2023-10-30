@@ -16,9 +16,15 @@
 127.0.0.1 supl.iusacell.com
 
 ## Reroute captive portal (http://captiveportal.kuketz.de)
-185.163.119.132 connectivitycheck.gstatic.com
+216.58.200.3 connectivitycheck.gstatic.com
 
-## NVIDIA telemetry
+## Ubuntu Telemetry
+0.0.0.0 www.metrics.ubuntu.com
+0.0.0.0 metrics.ubuntu.com
+0.0.0.0 www.popcon.ubuntu.com
+0.0.0.0 popcon.ubuntu.com
+
+## NVIDIA Telemetry
 0.0.0.0 gfswl.geforce.com
 0.0.0.0 telemetry.nvidia.com
 0.0.0.0 ssl.google-analytics.com
