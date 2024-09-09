@@ -1284,6 +1284,7 @@ user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!"
 
 /* vishnup custom changes */
 // Misc changes
+user_pref("privacy.donottrackheader.enabled", true); // Turn on Do Not Track
 user_pref("browser.search.separatePrivateDefault.ui.enabled", false); // Disable private search
 user_pref("browser.startup.page", 3); // Enable session restore
 user_pref("keyword.enabled", true); // This causes the urlbar to not use the search engine
