@@ -1285,14 +1285,15 @@ user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!"
 /* vishnup custom changes */
 // Misc changes
 user_pref("privacy.donottrackheader.enabled", true); // Turn on Do Not Track
+user_pref("privacy.globalprivacycontrol.enabled", true); // Turn on Do Not Sell/Share Data
 user_pref("browser.search.separatePrivateDefault.ui.enabled", false); // Disable private search
 user_pref("browser.startup.page", 3); // Enable session restore
 user_pref("keyword.enabled", true); // This causes the urlbar to not use the search engine
 user_pref("signon.rememberSignons", false); // Dont save passwords
-user_pref("privacy.resistFingerprinting.letterboxing", false); // Ugly
 user_pref("media.peerconnection.enabled", false); //WebRTC IP leak
+//user_pref("privacy.resistFingerprinting.letterboxing", false); // Ugly
 // For session history
-//user_pref("privacy.clearOnShutdown.cache", false);
+user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false); // [FF128+] [DEFAULT: true]
 user_pref("privacy.clearOnShutdown.history", false);
 user_pref("privacy.clearOnShutdown.sessions", false);
 user_pref("privacy.clearOnShutdown.cookies", false);
