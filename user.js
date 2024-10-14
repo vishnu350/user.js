@@ -1293,11 +1293,8 @@ user_pref("signon.rememberSignons", false); // Dont save passwords
 user_pref("media.peerconnection.enabled", false); //WebRTC IP leak
 //user_pref("privacy.resistFingerprinting.letterboxing", false); // Ugly
 // For session history
-user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false); // [FF128+] [DEFAULT: true]
-user_pref("privacy.clearOnShutdown.history", false);
-user_pref("privacy.clearOnShutdown.sessions", false);
-user_pref("privacy.clearOnShutdown.cookies", false);
-user_pref("privacy.clearOnShutdown.offlineApps", false);
+user_pref("privacy.clearOnShutdown_v2.cookiesAndStorage", false);
+user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false);
 // Disable Pocket
 user_pref("browser.pocket.enabled", false);
 user_pref("extensions.pocket.enabled", false);
