@@ -1286,6 +1286,7 @@ user_pref("media.peerconnection.enabled", false); //WebRTC IP leak
 // For session history
 user_pref("privacy.clearOnShutdown_v2.cookiesAndStorage", false);
 user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false);
+user_pref("privacy.clearOnShutdown_v2.browsingHistoryAndDownloads", false);
 // Disable Pocket
 user_pref("browser.pocket.enabled", false);
 user_pref("extensions.pocket.enabled", false);
