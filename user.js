@@ -1266,6 +1266,7 @@ user_pref("_user.js.parrot", "SUCCESS: No no he's not dead, he's, he's restin'!"
 
 /* vishnup custom changes */
 // Misc changes
+user_pref("extensions.enabledScopes", 13); // Allow distro provided extensions to work
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true); // Enable custom CSS for green lock icon
 user_pref("privacy.donottrackheader.enabled", true); // Turn on Do Not Track
 user_pref("privacy.globalprivacycontrol.enabled", true); // Turn on Do Not Sell/Share Data
