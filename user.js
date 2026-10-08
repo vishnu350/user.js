@@ -1280,6 +1280,11 @@ user_pref("media.peerconnection.enabled", false); //WebRTC IP leak
 user_pref("privacy.clearOnShutdown_v2.cookiesAndStorage", false);
 user_pref("privacy.clearOnShutdown_v2.historyFormDataAndDownloads", false);
 user_pref("privacy.clearOnShutdown_v2.browsingHistoryAndDownloads", false);
+// Disable AI features
+user_pref("browser.ai.control.linkPreviewKeyPoints", blocked);
+user_pref("browser.ai.control.pdfjsAltText", blocked);
+user_pref("browser.ai.control.sidebarChatbot", blocked);
+user_pref("browser.ai.control.smartTabGroups", blocked);
 // Disable Pocket
 user_pref("browser.pocket.enabled", false);
 user_pref("extensions.pocket.enabled", false);
